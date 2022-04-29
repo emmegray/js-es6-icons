@@ -113,9 +113,29 @@ const allIcons = [
 	}
 ];
 
+const typeSelect = document.querySelector("#type");
+const options = [];
+allIcons.forEach(
+    function (icon) {
+        if (
+            !(options.find(option => option === icon.type))
+        ) options.push(icon.type);
+    }
+)
+options.forEach(
+    function (option) {
+        const newOption = document.createElement("option");
+        newOption.value = option;
+        newOption.textContent = option;
+        typeSelect.appendChild(newOption);
+    }
+)
+
 const iconsContainer = document.querySelector("#icons .row");
 const iconTemplate = document.querySelector(".icon").cloneNode(true);
 document.querySelector(".icon").remove();
+
+printIcons(allIcons);
 
 function printIcons(icons) {
     icons.forEach(
@@ -130,9 +150,7 @@ function printIcons(icons) {
     )
 }
 
-printIcons(allIcons);
-
-document.querySelector("#type").addEventListener("change", function(event){
+typeSelect.addEventListener("change", function(event){
     const type = event.target.value;
     iconsContainer.innerHTML = "";
 
