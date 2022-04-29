@@ -1,0 +1,31 @@
+body {
+    background-color: lightblue;
+}
+
+header {
+    background-color: white;
+}
+
+.blue {
+    color: blue;
+}
+
+.orange {
+    color: orange;
+}
+
+.green {
+    color: green;
+}
+
+.icon {
+    margin-bottom: 16px;
+}
+
+.icon i{
+    font-size: 32px;
+}
+
+.icon b{
+    font-variant: small-caps;
+}
